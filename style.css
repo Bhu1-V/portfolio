@@ -44,10 +44,8 @@ bg -red : #ff837a
     --skill-card: #ffffff;
     --skill-shadow:  #ffffff;
 
-    --a-color: #fc9e9e;
+    --a-color: #f15858;
     --a-hover: #fff;
-
-    -game: rgb(218, 42, 42)
 }
 
 html , body {
