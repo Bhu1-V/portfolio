@@ -237,7 +237,7 @@ box-shadow: 9px 10px 25px -4px rgba(191,53,62,1); */
     overflow: hidden;
     white-space: wrap;
     border-right: 4px solid black;
-    font-size: 45px;
+    font-size: 40px;
 
 }
 
@@ -335,7 +335,22 @@ box-shadow: 9px 10px 25px -4px rgba(191,53,62,1); */
                              "left-column" "right-column" ;
     }
     .right-wrapper{
+        padding-top: 10px;
         justify-content: center;
+    }
+    .left-wrapper{
+        padding-top: 20px;;
+        padding-bottom: 10px;
+        justify-content: center;
+    }
+    .greeting-wrapper h1{
+        margin: 5px 0;
+    }
+    #bhu{
+ 
+        width : 100px;
+        height : 100px;
+        border: 3px solid #834545;
     }
     
     #wordchanger{
@@ -343,7 +358,7 @@ box-shadow: 9px 10px 25px -4px rgba(191,53,62,1); */
         overflow: hidden;
         white-space: wrap;
         border-right: 4px solid black;
-        font-size: 35px;
+        font-size: 25px;
 
     }
     .social-bubble{
