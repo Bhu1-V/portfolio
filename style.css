@@ -1,0 +1,361 @@
+/* colors */
+/* 
+black : #1e0805
+dark red : #62001d
+middle red : #c60035
+red : #d80013
+light red : #e3587b
+ligtest red : #f4beb1
+bg -red : #ff837a
+*/
+
+/* colors */
+
+/* :root{
+    --main-text: #8f281b;
+    --secondary-text : #f7d4d2;
+
+    --main-color:#f5584d;
+    --secondary-color : #ce4c42;
+    
+
+    --border-color : #62001d;
+    --theme-boder : #c60035;
+
+    --skill-card: #8b2222;
+    --skill-shadow:  #5e0303;
+
+    --a-color: #fc9e9e;
+    --a-hover: #fff;
+} */
+
+
+:root{
+    --main-text: #fe1a19;
+    --secondary-text : #f30e0e;
+
+    --main-color:#ffffff;
+    --secondary-color : #f7f7f7;
+    
+
+    --border-color : #fa5a5a;
+    --theme-boder : #d44444;
+
+    --skill-card: #ffffff;
+    --skill-shadow:  #ffffff;
+
+    --a-color: #fc9e9e;
+    --a-hover: #fff;
+
+    -game: rgb(218, 42, 42)
+}
+
+html , body {
+    padding: 0;
+    margin: 0;
+    cursor: url(https://cur.cursors-4u.net/games/gam-16/gam1501.cur), auto !important;
+}
+body *{
+    transition: 0.2s;
+}
+h1, h2, h3, h4 ,h5 ,h6 ,strong{
+    color: var(--main-text);
+    font-family: 'Russo One', sans-serif;
+    font-weight: 500;
+}
+
+p,li,span,label ,input ,textarea{
+    color: var(--secondary-text);
+    font-family: 'Roboto Mono', monospace;
+}
+
+a{
+    text-decoration: none;
+    color: var(--a-color);
+}
+
+ul{
+    list-style: none;
+}
+
+h1{
+    font-size: 56px;
+}
+h2{
+    font-size: 36px;
+}
+h3{
+    font-size: 28px;
+}
+h4{
+    font-size: 24px;
+}
+h5{
+    font-size: 20px;
+}
+h6{
+    font-size: 16px;
+}
+
+.under:hover{
+    cursor: url(https://cur.cursors-4u.net/others/oth-5/oth518.ani), url(http://cur.cursors-4u.net/others/oth-5/oth518.png), auto !important;
+    transition: scale(1.02);
+}
+
+.s1{
+    background-color: var(--main-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: auto;
+}
+
+.s2{
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: auto;
+}
+
+.main-container{
+    width : 1200px;
+    margin: 0 auto;
+}
+
+
+.greeting-wrapper{
+    display: grid;
+    text-align: center;
+    align-content: center;
+    min-height: 10em;
+}
+
+.intro-wrapper{
+    border-radius: 5px 5px 0 0 ;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+
+/* -webkit-box-shadow: 9px 10px 25px -4px rgba(191,53,62,1);
+-moz-box-shadow: 9px 10px 25px -4px rgba(191,53,62,1);
+box-shadow: 9px 10px 25px -4px rgba(191,53,62,1); */
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas: "nav-wrapper nav-wrapper"
+                         "left-column right-column" ;
+
+}
+
+.nav-wrapper{
+    grid-area: nav-wrapper;
+    border-bottom: 1px solid var(--border-color);
+
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    align-items: center;
+
+}
+.left-wrapper{
+    grid-area: left-column;
+    display: grid;
+    justify-content: center;
+    padding : 50px 0;
+}
+.right-wrapper{
+    grid-area: right-column;
+    display: grid;
+    justify-content: center;
+    padding : 50px 0;
+}
+
+.project-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+
+
+
+#bhu{
+    display: block;
+    margin: 0 auto;
+    width : 200px;
+    height : 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #834545;
+}
+
+
+.theme-dot{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+
+    border: 2px solid var(--theme-boder) 
+}
+.theme-dot:hover{
+    border-width: 5px;
+    margin : 5px;
+}
+
+
+
+
+#theme-options-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+#light{
+    background-color: white;
+}
+#dark{
+    background-color: tomato;
+}
+
+@media screen and (max-width : 1200px){
+    .main-container{
+        width: 95%;
+    }
+}
+
+
+.popText:hover{
+    font-size: 35px;
+    --a-color: --a-hover;
+}
+
+
+
+
+#wordchanger{
+
+
+    /* animation-timing-function: ease; */
+    overflow: hidden;
+    white-space: wrap;
+    border-right: 4px solid black;
+    font-size: 45px;
+
+}
+
+
+
+.about-wrapper{
+    display: grid;
+    gap: 80px;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    padding: 50px 0px;
+
+}
+
+.about-wrapper:hover{
+    cursor: url(https://cur.cursors-4u.net/games/gam-11/gam1019.cur), auto !important;
+}
+
+#skills{
+    display: flex;
+    flex-direction: row;
+    margin: 15px 80px;
+    justify-content: space-around;
+    background-color: var(--skill-card);
+    overflow: hidden;
+    /* box-shadow: -22px 18px 18px -9px rgba(0,0,0,1); */
+}
+
+#skills li{
+    text-align: center;
+    padding-right: 15px;
+} 
+
+.social-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.under{
+
+    height: 290px;
+    width: 400px;
+    border-radius: 20px;
+     margin-bottom: 50px;
+     object-fit:scale-down;
+}
+
+.social-bubble{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+}
+
+.social-bubble:hover{
+    height: 100px;
+    width: 100px;
+}
+
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    padding-bottom: 60px;
+
+}
+
+#itchio{
+    padding-right: 100px;
+}
+#mail{
+    padding-right: 100px;
+}
+
+#game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width : 800px){
+    .intro-wrapper{
+        grid-template-columns: 1fr;
+
+        grid-template-areas: "nav-wrapper"
+                             "left-column" "right-column" ;
+    }
+    .right-wrapper{
+        justify-content: center;
+    }
+    
+    #wordchanger{
+
+        overflow: hidden;
+        white-space: wrap;
+        border-right: 4px solid black;
+        font-size: 35px;
+
+    }
+    .social-bubble{
+        width: 45px;
+        height: 45px;
+    }
+    #itchio{
+        padding-right: 20px;
+    }
+    #mail{
+        padding-right: 20px;
+    }
+}

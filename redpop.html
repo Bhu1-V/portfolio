@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhuvan</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js"></script>
+
+  
+
+
+  <script>
+
+   function play(){
+      
+    divi = document.getElementById("game");
+    divi.onclick = null;
+    divi.removeChild(divi.children[1]);
+    console.log("connected");
+    can = document.getElementById("snakegame");
+    c2 = document.getElementById("score");
+    c2.style.width = "400px";
+    c2.style.height = "50px";
+    c2.style.marginBottom = "5px";
+    can.width = 400;
+    can.height = 400;
+    c2.height = 50;
+    c2.width = 400;
+    can.style.marginBottom = "50px";
+
+    ctx = can.getContext("2d");
+    ct2 = c2.getContext("2d");
+    document.addEventListener("keydown",keyPush);
+    setInterval(game,1000/9);
+  }
+
+    xv = 1;
+    yv = 0;
+    px=py=20;
+    ax=ay=15;
+    gs=tc=20;
+    trail = [];
+    tail = 5;
+    score = 0;
+
+    function game(){
+        px += xv;
+        py += yv;
+
+        if(px < 0){
+            px = tc-1;
+        }
+        if(px>tc-1){
+            px = 0;
+        }
+        if(py < 0){
+            py = tc-1;
+        }
+        if(py > tc-1){
+            py = 0;
+        }
+
+        ctx.fillStyle = 'rgb(219, 204, 204)';
+        ctx.fillRect(0,0,can.width,can.height);
+
+        ct2.fillStyle = 'rgb(219, 204, 204)';
+        ct2.fillRect(0,0,c2.width,c2.height);
+
+        ct2.font = "30px Arial";
+        ct2.fillStyle = 'rgb(218, 42, 42)';
+        ct2.fillText("SCORE :", 95, 40);
+        ct2.fillText(score.toString(), 250, 38);
+
+        ctx.fillStyle = "rgb(185, 127, 127)";
+        for(var i = 0 ; i < trail.length; i++){
+            ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+            
+            if(trail[i].x == px && trail[i].y == py){
+                tail = 5;
+            }
+
+        }
+        trail.push(
+            {
+                x:px,
+                y: py
+            }
+        );
+
+        while(trail.length > tail){
+            trail.shift();
+        }
+
+        if(ax == px && ay == py){
+            tail++;
+            score++;
+            ax = Math.floor(Math.random() * tc);
+            ay = Math.floor(Math.random() * tc);
+            // ct2.clearRect(250,0,400,50);
+            ct2.fillText(score.toString(), 250, 38);
+
+        }
+
+        ctx.fillStyle = "rgb(218, 42, 42)";
+        ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+
+    }
+
+    function keyPush(evt){
+      evt.preventDefault();
+
+        switch(evt.keyCode){
+            case 37:
+                xv=-1;
+                yv=0;
+                break;
+
+            case 38:
+                xv=0;
+                yv=-1;
+                break;
+
+            case 39:
+                xv=1;
+                yv=0;
+                break;
+
+            case 40:
+                xv=0;
+                yv=1;
+                break;
+
+            
+
+        }
+
+    }
+  </script>
+
+
+  <script name = "typing effect">
+      var i = 0;
+      var j = 0;
+      var txt = 'Student.Semi-Pro Gamer.Noobie Game Dev.Noobie Artist.';
+      var speed = 100; /* The speed/duration of the effect in milliseconds */
+
+
+      function typeWriter() {
+        var c = 0;
+        if(txt[i-1] == '.'){
+          document.getElementById("wordchanger").innerHTML = "";
+          c = 0;
+          // setTimeout(typeWriter,500);
+        }
+        if (i < txt.length) {
+          c++;
+          // document.getElementById("wordchanger").style.width = (c).toString() + "ch";
+          document.getElementById("wordchanger").innerHTML += txt.charAt(i);
+          
+          i++;
+          setTimeout(typeWriter, 200);
+        }
+        else{
+          document.getElementById("wordchanger").innerHTML = "Student.";
+
+        }
+      
+      }
+          
+    
+  </script>
+
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet"> 
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet"> 
+
+<body onload="typeWriter()">
+<!-- <body> -->
+    <main>
+    <section class = "s1">
+      <div class = "main-container">
+        <div class = "greeting-wrapper">
+                  <h1 > Hi, I'm Bhuvan </h1>
+        </div>
+
+        <div class = "intro-wrapper">
+          <div class="nav-wrapper">
+            <p style="margin-right: 20px;"><a class = "popText" href = "#B">Bored.?</a></p>
+              <p style="margin-right: 20px;"><a class = "popText" href = "#contact">Contact</a></p>
+          </div>
+          <div class = "left-wrapper">
+            <img id="bhu" src="./images/bhu1.png" alt = 'bhu1'>
+<!-- 
+            <h5 style="text-align: center;line-height: 0;"> Personalize Theme</h5>
+            <div id = "theme-options-wrapper">
+              <div id="light" class = "theme-dot"></div>
+              <div id="dark" class = "theme-dot"></div>              
+            </div>
+
+            <p id="settings-note">* Selected Theme will be Saved for Future Use</p> -->
+
+          </div>
+
+          <div class = "right-wrapper">
+            <div id="preview"> 
+              <h2 style="text-align: center;">I'm a</h2>
+
+              <div class="slider-wrapper">
+                <div class="slider">
+
+                   <p id="wordchanger">
+                     
+                   </p>
+                  </div> 
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    
+    
+    <section class = "s2">
+      <div class = "main-container">
+        
+        <div class="about-wrapper">
+          <div class="about-me">
+            <h4>More About Me</h4>
+
+            <p>
+              I'm a Tech Enthusuiast.
+              <br>
+              I Love To Learn In's and Out's of how Tachnology Works.
+              <br>
+              I Love Playing Games , And Making Them too.
+              <br>
+
+            </p>
+            
+            <hr>
+
+              <h4>Skills</h4>
+              
+              <div id="skills">
+                <ul style="text-align: center;">
+                  <li>C++</li>
+                  <li>Java Script</li>
+                  <li>Python</li>
+                  <li>HTML & CSS</li>
+                </ul>
+                <ul>
+                  <li>Unity</li>
+                  <li>C#</li>
+                  <li>Java</li>
+                  <!-- <li></li> -->
+                  
+                </ul>
+              </div>
+              
+          </div>
+          <div class = "social-links">
+            <h2>Check Out My Games.</h2>
+            <h3 class="popText"><a target="_blank" href="https://eastereggstudios.itch.io/">EasterEggStudios</a></h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class = "s1">
+      <div class = "main-container">
+        
+        <div class="project-wrapper">
+          <h2 >Projects</h2>
+          <div class = "xx">
+          <img  src="./images/cons.png" alt="Under-Construction" class = "under">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class = "s2">
+      <div onclick="play()" id = "game" class = "main-container">
+
+        <h1 id = "B">BORED.?</h1>
+        <button id="butt">PLAY</button>
+        <canvas style="width: 0px;height: 0px;" id = "score"></canvas>
+        <canvas id = "snakegame"></canvas>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class = "s1">
+      <div id = "contact" class = "main-container">
+        
+        <div class="contact">
+          <h2>Contact Me</h2>
+          <div class="social">
+            
+            <a id = "itchio" target="_black" href="https://eastereggstudios.itch.io">
+              <img src="./images/itch.jpg" alt="itch-link" class="social-bubble">
+            </a>
+
+            <a id = "mail" target="_black" href=" mailto: bhuvanvemula@gmail.com">
+              <img  src="./images/G+.png" alt="google-link" class="social-bubble">
+            </a>
+
+            <a  target="_black"href="https://github.com/pWNn1sher"><img src="./images/git.jpg" alt="git-link" class="social-bubble"></a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
